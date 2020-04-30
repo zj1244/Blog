@@ -1,7 +1,3 @@
-test
+xxxxxxxxxxxx
 
-![image-20200430141952724](../../pic/image-20200430141952724.png)
-
-test2
-
-![image-20200430142023379](image-20200430142232150.png)
+![image-20200430142355475](s.assets/image-20200430142355475.png)
