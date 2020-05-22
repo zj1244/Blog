@@ -9,7 +9,7 @@
 # curl https://raw.githubusercontent.com/anchore/anchore-engine/master/scripts/docker-compose/docker-compose.yaml -o ~/aevolume/docker-compose.yaml
 # curl https://raw.githubusercontent.com/anchore/anchore-engine/master/scripts/docker-compose/config.yaml -o ~/aevolume/config/config.yaml
 # docker-compose pull
-# docker-compose up -d
+# docker-compose up -d  
 ```
 
 ### 1.2. 查看部署是否成功：
@@ -35,11 +35,11 @@ Engine DB Version: 0.0.9
 Engine Code Version: 0.3.4
 ```
 
-PS：
-默认的配置会导致出现如下警告：
+PS：  
+默认的配置会导致出现如下警告：  
 ![](_v_images/20200522164032162_18389.png)
 
-可以通过修改config.yaml文件内容解决：
+可以通过修改config.yaml文件内容解决：  
 把`db_connect: 'postgresql+pg8000://postgres:mysecretpassword@anchore-db:5432/postgres'`改成`db_connect: 'postgresql+psycopg2://postgres:mysecretpassword@anchore-db:5432/postgres'`
 
 ![](_v_images/20200522164101762_1383.png)
