@@ -1,6 +1,6 @@
-## k8s基本命令记录
-### 任何命令如果不加-n xxx/--namespace xxx都会默认在default
-### 查看namespaces：
+## 1. k8s基本命令记录
+### 1.1. 任何命令如果不加-n xxx/--namespace xxx都会默认在default
+### 1.2. 查看namespaces：
 ```bash
 # kubectl get ns
 NAME              STATUS   AGE
@@ -10,11 +10,11 @@ kube-public       Active   4h11m
 kube-system       Active   4h11m
 ```
 
-### 升级deployment
+### 1.3. 升级deployment
 
 升级deployment有两种方式，一种是直接修改，一种是修改yaml文件：
 
-#### 第一种
+#### 1.3.1. 第一种
 ```bash
 # kubectl get deployments
 NAME          READY   UP-TO-DATE   AVAILABLE   AGE
@@ -26,7 +26,7 @@ Edit cancelled, no changes made.
 # kubectl edit deployment.extensions/sa-frontend
 Edit cancelled, no changes made.
 ```
-#### 第二种
+#### 1.3.2. 第二种
 ```bash
 # cat sa-frontend-deployment-green.yaml 
 apiVersion: extensions/v1beta1
@@ -67,7 +67,7 @@ deployment "sa-frontend" successfully rolled out
 
 ```
 
-### 回退上一个版本
+### 1.4. 回退上一个版本
 
 ```bash
 # kubectl rollout history deployment sa-frontend //查看deployment版本
@@ -80,7 +80,7 @@ REVISION  CHANGE-CAUSE
 deployment.extensions/sa-frontend rolled back
 ```
 
-### 查看所有pod
+### 1.5. 查看所有pod
 ```bash
 # kubectl get pods -o wide --all-namespaces
 NAME                           READY   STATUS    RESTARTS   AGE   IP            NODE        NOMINATED NODE   READINESS GATES
@@ -90,7 +90,7 @@ sa-logic-798b555684-c6r8b      1/1     Running   0          15m   10.100.0.15   
 sa-logic-798b555684-wb26v      1/1     Running   0          15m   10.100.0.16   localhost   <none>           <none>
 ```
 
-### 查看服务
+### 1.6. 查看服务
 
 ```bash
 # kubectl get svc
@@ -100,7 +100,7 @@ sa-frontend-nodeport   NodePort    10.111.36.213    <none>        80:31068/TCP  
 sa-logic               ClusterIP   10.110.167.111   <none>        80/TCP         3m27s
 ```
 
-### 查看服务详细信息
+### 1.7. 查看服务详细信息
 
 ```bash
 # kubectl describe service sa-frontend-nodeport
@@ -122,7 +122,7 @@ Events:                   <none>
 也就是访问本机有效IP:NodePort或者访问pod_ip:Port都会转发到TargetPort。
 ![](_v_images/20200520170333259_1765.png)
 
-### 查看pod详情
+### 1.8. 查看pod详情
 
 当pod没起来的时候，查看详情：
 
@@ -182,7 +182,7 @@ Events:
 
 ```
 
-### 设置node的role标签
+### 1.9. 设置node的role标签
 
 ```
 [root@infoanalysis2-test ops]# kubectl get nodes
