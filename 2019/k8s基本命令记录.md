@@ -126,7 +126,7 @@ Events:                   <none>
 
 当pod没起来的时候，查看详情：
 
-```
+```bash
 [root@sec-infoanalysis2-test ops]# kubectl describe pod billowing-kudu-hello-helm-5c6689fcf9-qjhbp
 Name:           billowing-kudu-hello-helm-5c6689fcf9-qjhbp
 Namespace:      default
@@ -198,4 +198,9 @@ infoanalysis1-test   Ready    node     78d   v1.15.1
 infoanalysis2-test   Ready    master   78d   v1.15.1
 k8s-node1            Ready    node     2m    v1.15.1
 
+```
+
+### 查看错误
+```bash
+# journalctl -f -u kubelet
 ```
