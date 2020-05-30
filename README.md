@@ -1,5 +1,12 @@
 ## 笔记
 
+* [如何使用helm部署falco](2020/如何使用helm部署falco.md)
+* [如何部署百度iast](2020/如何部署百度iast.md)
+* [如何从docker未授权漏洞到获得k8s master的访问权](2020/如何从docker未授权漏洞到获得k8s_master的访问权.md)
+* [如何解密jenkins的凭证](2020/如何解密jenkins的凭证.md)
+* [如何为anchore添加扫描策略](2020/如何为anchore添加扫描策略.md)
+* [如何使用jenkins的Publish over ssh实现远程部署](2020/如何使用jenkins的Publish_over_ssh实现远程部署.md)
+* [如何在k8s上部署jenkins](2020/如何在k8s上部署jenkins.md)
 * [plugin flannel does not support config version的错误](2019/plugin_flannel_does_not_support_config_version的错误.md)
 * [使用apscheduler的一个坑](2019/使用apscheduler的一个坑.md)
 * [如何解决anchore对于nvdv2没有修复版本的问题](2019/如何解决anchore对于nvdv2没有修复版本的问题.md)
