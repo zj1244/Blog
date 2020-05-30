@@ -128,7 +128,7 @@ Success: policy-check-env activated
 #### 1.2.4. 执行扫描  
 
 ```
-# 3. anchore-cli  --u admin --p 123 --url http://192.168.47.123:31050/v1  evaluate check zj1244/demo:10 --policy policy-check-env --detail
+# anchore-cli  --u admin --p 123 --url http://192.168.47.123:31050/v1  evaluate check zj1244/demo:10 --policy policy-check-env --detail
 Image Digest: sha256:dc083990823a30faa6d5f8b425f9fb52bca4341e7f12d2f9f59773dce9cd04ad
 Full Tag: docker.io/zj1244/demo:10
 Image ID: 780c008ae27248223c23a7e2e3259915fa97adc6c052489d0ff96999e466b21e
