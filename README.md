@@ -1,5 +1,10 @@
 ## 笔记
 
+* [plugin flannel does not support config version的错误](2019/plugin flannel does not support config version的错误.md)
+* [使用apscheduler的一个坑](2019/使用apscheduler的一个坑.md)
+* [如何解决anchore对于nvdv2没有修复版本的问题](2019/如何解决anchore对于nvdv2没有修复版本的问题.md)
+* [如何使用anchore+Jenkins进行镜像扫描](2019/如何使用anchore+Jenkins进行镜像扫描.md)
+* [因重置node后导致flannel报错的问题](2019/因重置node后导致flannel报错的问题.md)
 * [如何在k8s上使用helm部署Anchore](2019/如何在k8s上使用helm部署Anchore.md)
 * [如何使用docker-compose部署Anchore](2019/如何使用docker-compose部署Anchore.md)
 * [反弹shell语句备忘](2019/反弹shell语句备忘.md)
