@@ -1,6 +1,6 @@
-## 如何部署百度iast
+## 1. 如何部署百度iast
 
-### 环境要求
+### 1.1. 环境要求
 
 首先需要三个数据库，mysql、Elasticsearch和MongoDB，es用来存储报警和统计信息，mongo用来存储应用、账号密码等信息。
 目前对数据库的要求是：  
@@ -8,7 +8,7 @@
 * MongoDB版本大于等于3.6
 * ElasticSearch版本大于等于5.6，小于7.0  
 
-### 添加mongo用户  
+### 1.2. 添加mongo用户  
 
 mongodb和es安装过程省略，测试可以用docker  
 
@@ -17,7 +17,7 @@ mongodb和es安装过程省略，测试可以用docker
 > db.createUser({user:'iast',pwd:'123456', roles:["readWrite", "dbAdmin"]})
 ```  
 
-### 安装管理后台  
+### 1.3. 安装管理后台  
 
 ```
 # wget https://packages.baidu.com/app/openrasp/release/1.3.2/rasp-cloud.tar.gz
@@ -42,7 +42,7 @@ mongodb和es安装过程省略，测试可以用docker
 # ./rasp-cloud -d //后台运行
 ```  
 
-### IAST插件安装  
+### 1.4. IAST插件安装  
 
 ```
 # wget https://packages.baidu.com/app/openrasp/openrasp-iast-latest -O /usr/bin/openrasp-iast
@@ -65,7 +65,7 @@ grant all privileges on openrasp.* to 'rasp'@'localhost' identified by 'rasp123'
 
 ![](_v_images/20200530223243576_19833.png)  
 
-### 配置管理后台  
+### 1.5. 配置管理后台  
 
 打开云控管理后台[http://ip:8086](http://ip:8086)，输入默认用户名密码：openrasp/admin@123
 在插件管理中选择推送iast插件。  
@@ -84,7 +84,7 @@ grant all privileges on openrasp.* to 'rasp'@'localhost' identified by 'rasp123'
 
 点击保存  
 
-### 安装agent  
+### 1.6. 安装agent  
 
 下载webgoat.jar文件
 链接：https://pan.baidu.com/s/1du-4XVlAfvk7S6q-8VF7gA 
@@ -128,7 +128,7 @@ CMD ["--server.port=8080", "--server.address=0.0.0.0"]
 # docker run -p 8080:8080 webgoat:1
 ```  
 
-### 测试效果  
+### 1.7. 测试效果  
 
 在云控上点击主机管理，出现agent，说明agent部署成功  
 
