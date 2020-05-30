@@ -86,7 +86,7 @@ grant all privileges on openrasp.* to 'rasp'@'localhost' identified by 'rasp123'
 
 ### 1.6. 安装agent  
 
-下载webgoat.jar文件
+下载靶机webgoat.jar
 链接：https://pan.baidu.com/s/1du-4XVlAfvk7S6q-8VF7gA 
 提取码：4261   
 
