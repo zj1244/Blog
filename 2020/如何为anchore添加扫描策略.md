@@ -153,7 +153,7 @@ dockerfile        instruction        Dockerfile directive 'ENV' check 'like' mat
 
 直接给出json文件：  
 
-```
+```json
 {
     "blacklisted_images": [], 
     "comment": "Default bundle", 
