@@ -1,5 +1,6 @@
 ## 笔记
 
+* [如何在k8s上使用helm部署Anchore](2019/如何在k8s上使用helm部署Anchore.md)
 * [如何使用docker-compose部署Anchore](2019/如何使用docker-compose部署Anchore.md)
 * [反弹shell语句备忘](2019/反弹shell语句备忘.md)
 * [如何使用centos7安装kubernetes](2019/如何使用centos7安装kubernetes.md)
