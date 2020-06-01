@@ -5,7 +5,7 @@
 使用helm部署falco，推荐把日志格式化成json，这样日志信息会比较详细  
 
 ```
-# helm install --name falco --set ebpf.enabled=true,falco.jsonOutput=true,set image.tag=0.22.0 stable/falco
+# helm install stable/falco --name falco -f custom_rules.yaml  --set ebpf.enabled=true,falco.jsonOutput=true,image.tag=0.23.0 
 ```  
 
 从集群删除  
