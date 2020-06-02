@@ -1,5 +1,6 @@
 ## 笔记
 
+* [解决falco规则的一个小bug](2020/解决falco规则的一个小bug.md)
 * [如何使用helm部署falco](2020/如何使用helm部署falco.md)
 * [如何部署百度iast](2020/如何部署百度iast.md)
 * [如何从docker未授权漏洞到获得k8s master的访问权](2020/如何从docker未授权漏洞到获得k8s_master的访问权.md)
