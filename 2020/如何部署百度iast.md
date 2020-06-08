@@ -61,7 +61,7 @@ grant all privileges on openrasp.* to 'rasp'@'localhost' identified by 'rasp123'
 
 ![](_v_images/20200530223224882_15823.png)  
 
-在云控（8086那个端口）右上角添加主机->Fuzz工具安装，从第三步开始，注意改mysql地址：  
+在云控（8086那个端口）右上角添加主机->Fuzz工具安装，从第三步开始，注意改mysql地址为上个步骤的数据库地址：  
 
 ![](_v_images/20200530223243576_19833.png)  
 
