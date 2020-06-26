@@ -35,10 +35,7 @@
 
 可以把anchore添加到pipe line或者freestyle，下面以pipeline为例说明构建过程：  
 
-新建一个任务，并选择pipe line，在【流水线】里输入以下脚本后确定，其中bailOnFail=false表示就算存在高危漏洞，构建过程也会标识成成功。bailOnPluginFail=false表示如果anchore服务器连不上，或者扫描插件存在错误，构建过程依然标识成功。需要注意的是，推荐在流水线中把push image动作放在镜像扫描前面：
-
-**好处**：不会因为扫描而影响业务发布（笔者实践中发现虽然扫描会在2分钟之内完成，但是还是有个别开发会抱怨怎么那么慢）  
-**坏处**：不能阻止有漏洞的镜像发布
+新建一个任务，并选择pipe line，在【流水线】里输入以下脚本后确定，其中bailOnFail=false表示就算存在高危漏洞，构建过程也会标识成成功。bailOnPluginFail=false表示如果anchore服务器连不上，或者扫描插件存在错误，构建过程依然标识成功。
 
 ```
 pipeline {
