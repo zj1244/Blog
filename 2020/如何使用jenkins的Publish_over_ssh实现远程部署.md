@@ -30,6 +30,15 @@
 
 ### 1.6. 设置Publish over ssh  
 
+在远程服务器上添加一个用于更新的用户，如：ci
+此用户需要有执行sudo权限，所以在root权限下输入`visudo`，在如下位置添加
+
+```
+ci    ALL=(ALL)       ALL
+```  
+
+![](_v_images/20200724113126957_27118.png)  
+
 【系统管理】【系统配置】中找到【Publish over SSH】，配置远程服务器的ip、登录用户名和密码
 Remote Directory输入/home/ci，表示远程工作目录是/home/ci，之后传输的文件都将放于此。  
   
