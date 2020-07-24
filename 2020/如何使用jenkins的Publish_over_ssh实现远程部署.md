@@ -34,7 +34,7 @@
 此用户需要有执行sudo权限，所以在root权限下输入`visudo`，在如下位置添加
 
 ```
-ci    ALL=(ALL)       ALL
+ci    ALL=(ALL)       NOPASSWD: ALL
 ```  
 
 ![](_v_images/20200724113126957_27118.png)  
