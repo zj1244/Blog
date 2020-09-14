@@ -60,11 +60,14 @@ roleRef:
 #deployment
 ---
 kind: Deployment
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 metadata:
   name: nfs-client-provisioner
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+     app: nfs-client-provisioner
   strategy:
     type: Recreate
   template:
@@ -84,14 +87,15 @@ spec:
             - name: PROVISIONER_NAME
               value: fuseim.pri/ifs
             - name: NFS_SERVER
-              value: 192.168.1.68
+              value: 192.168.47.146
             - name: NFS_PATH
-              value: /data
+              value: /data/data
       volumes:
         - name: nfs-client-root
           nfs:
-            server: 192.168.1.68
-            path: /data
+            server: 192.168.47.146
+            path: /data/data
+
 ```
 
 #### 1.3.2. nfs-client-class.yaml
@@ -176,13 +180,17 @@ metadata:
 spec:
   serviceName: jenkins
   replicas: 1
+  selector:
+   matchLabels:
+    app: jenkins
   updateStrategy:
     type: RollingUpdate
   template:
     metadata:
       name: jenkins
       labels:
-        name: jenkins
+       app: jenkins
+       name: jenkins
     spec:
       terminationGracePeriodSeconds: 10
       serviceAccountName: jenkins
@@ -314,7 +322,7 @@ RUN apt-get update && \
 ```
 # StatefulSet
 ---
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: jenkins
@@ -323,13 +331,17 @@ metadata:
 spec:
   serviceName: jenkins
   replicas: 1
+  selector:
+   matchLabels:
+    app: jenkins
   updateStrategy:
     type: RollingUpdate
   template:
     metadata:
       name: jenkins
       labels:
-        name: jenkins
+       app: jenkins
+       name: jenkins
     spec:
       terminationGracePeriodSeconds: 10
       serviceAccountName: jenkins
@@ -388,6 +400,7 @@ spec:
           path: /var/run/docker.sock
       securityContext:
         fsGroup: 1000
+
 ```
 
 #### 1.6.3. 更新pod
