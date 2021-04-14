@@ -1,5 +1,6 @@
 ## 笔记
 
+* [如何删除anchore](2021/如何删除anchore.md)
 * [如何把html转换成images](2020/如何把html转换成images.md)
 * [解决falco规则的一个小bug](2020/解决falco规则的一个小bug.md)
 * [如何使用helm部署falco](2020/如何使用helm部署falco.md)

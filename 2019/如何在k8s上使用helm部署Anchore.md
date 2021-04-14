@@ -26,7 +26,7 @@ Update Complete.
 #### 1.3.2. 使用helm安装  
 
 ```bash
-# helm install --name anchore stable/anchore-engine --set postgresql.postgresPassword=test,anchoreGlobal.defaultAdminPassword=test,anchoreAnalyzer.layerCacheMaxGigabytes=4,anchoreAnalyzer.replicaCount=5,anchorePolicyEngine.replicaCount=3
+# helm install anchore anchore/anchore-engine --set postgresql.postgresPassword=test,anchoreGlobal.defaultAdminPassword=test,anchoreAnalyzer.layerCacheMaxGigabytes=4,anchoreAnalyzer.replicaCount=5,anchorePolicyEngine.replicaCount=3
 NAME:   anchore
 LAST DEPLOYED: Wed Oct 23 13:56:29 2019
 NAMESPACE: default
@@ -721,7 +721,23 @@ Events:
 ### 1.5. 建议使用外部数据库：  
 
 ```bash
-# helm install --name anchore stable/anchore-engine --set postgresql.postgresPassword=xxx,anchoreGlobal.defaultAdminPassword=xxx,postgresql.postgresUser=postgres,postgresql.postgresDatabase=anchore,postgresql.externalEndpoint=192.168.47.146:5432,anchoreGlobal.logLevel=DEBUG,anchore-feeds-db.postgresPassword=xxx,anchore-feeds-db.externalEndpoint=192.168.47.146:5432,anchoreAnalyzer.layerCacheMaxGigabytes=4
+# helm install anchore anchore/anchore-engine --set postgresql.postgresPassword=xxx,anchoreGlobal.defaultAdminPassword=xxx,postgresql.postgresUser=postgres,postgresql.postgresDatabase=anchore,postgresql.externalEndpoint=192.168.47.146:5432,anchoreGlobal.logLevel=DEBUG,anchore-feeds-db.postgresPassword=xxx,anchore-feeds-db.externalEndpoint=192.168.47.146:5432
+```  
+使用外部数据库一定要新建个名为anchore的数据库，不然会一直报错
+```bash
+# kubectl logs anchore-anchore-engine-api-5479b98897-njcc8
+[MainThread] [anchore_engine.configuration.localconfig/validate_config()] [WARN] no webhooks defined in configuration file - notifications will be disabled
+[MainThread] [anchore_manager.cli.service/start()] [INFO] Loading DB routines from module (anchore_engine)
+[MainThread] [anchore_manager.util.db/connect_database()] [INFO] DB params: {"db_connect_args": {"connect_timeout": 86400}, "db_pool_size": 30, "db_pool_max_overflow": 100, "db_echo": false, "db_engine_args": null}
+[MainThread] [anchore_manager.util.db/connect_database()] [INFO] DB connection configured: True
+[MainThread] [anchore_manager.util.db/connect_database()] [INFO] DB attempting to connect...
+[MainThread] [anchore_manager.util.db/connect_database()] [WARN] DB connection failed, retrying - exception: test connection failed - exception: (psycopg2.OperationalError) FATAL:  database "anchore" does not exist
+
+(Background on this error at: http://sqlalche.me/e/e3q8)
+[MainThread] [anchore_manager.util.db/connect_database()] [INFO] DB attempting to connect...
+[MainThread] [anchore_manager.util.db/connect_database()] [WARN] DB connection failed, retrying - exception: test connection failed - exception: (psycopg2.OperationalError) FATAL:  database "anchore" does not exist
+
+
 ```  
 
 ### 1.6. 参考链接：  
