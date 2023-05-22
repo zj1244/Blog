@@ -1,0 +1,15 @@
+{
+    "attachment_folder": "_v_attachments",
+    "config_mgr": "vx.vnotex",
+    "created_time": "2023-05-05T00:59:24Z",
+    "description": "",
+    "extra_configs": {
+    },
+    "history": [
+    ],
+    "image_folder": "vx_images",
+    "name": "Blog",
+    "tag_graph": "",
+    "version": 3,
+    "version_controller": "dummy.vnotex"
+}
